@@ -1,4 +1,4 @@
-Mostrar la lista de productos
+<a href="{{ url('producto/create') }}">Agregar un nuevo producto</a>
 <table class="table table-light">
     <thead class="thead-light">
         <tr>

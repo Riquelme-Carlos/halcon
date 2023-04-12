@@ -86,7 +86,12 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
-        Producto::destroy($id);
+        $producto = Producto::findOrFail($id);
+
+        if(Storage::delete('public/'.$producto->foto)){
+            Producto::destroy($id);
+            
+        }
         return redirect('producto');
     }
 }
