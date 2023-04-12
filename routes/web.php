@@ -1,6 +1,7 @@
 <?php
 /*Permite manipular las rutas*/
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/producto', function () {
+//     return view('producto.index');
+// });
+
+// Route::get('/producto/create',[ProductoController::class,'create']);
+
+Route::resource('producto', ProductoController::class);
+

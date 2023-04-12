@@ -12,7 +12,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $datos['productos'] = Producto::paginate(5);
+        return view('producto.index', $datos);
     }
 
     /**
@@ -20,7 +21,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        return view('producto.create');
     }
 
     /**
@@ -29,6 +30,16 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $datosProducto = request()->except('_token');
+
+        if($request->hasFile('foto')){
+            $datosProducto['foto'] = $request->file('foto')->store('uploads', 'public');
+        }
+
+        Producto::insert($datosProducto);
+
+        
+        return response()->json($datosProducto);
     }
 
     /**
