@@ -1,5 +1,5 @@
 <?php
-
+/*Permite manipular las rutas*/
 use Illuminate\Support\Facades\Route;
 
 /*

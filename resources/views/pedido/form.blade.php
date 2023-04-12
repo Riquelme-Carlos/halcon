@@ -1,0 +1,1 @@
+Formulario que tendra la informacion en comun entre edit y create del pedido
