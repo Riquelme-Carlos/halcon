@@ -11,6 +11,7 @@
     <input id="stock" type="number" value="{{$producto->stock}}" name="stock">
     <br>
     <label for="foto">Foto:</label>
+    {{$producto->foto}}
     <input id="foto" type="file" value="{{$producto->foto}}" name="foto">
     <br>
     <br>

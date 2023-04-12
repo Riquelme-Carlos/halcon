@@ -15,7 +15,12 @@ Mostrar la lista de productos
         @foreach( $productos as $producto )
         <tr>
             <td>{{ $producto->id }}</td>
-            <td>{{ $producto->foto }}</td>
+            <td>
+                <img src="{{ asset('storage').'/'.$producto->foto }}" alt="">
+                {{ $producto->foto }}
+
+
+            </td>
             <td>{{ $producto->nombre }}</td>
             <td>{{ $producto->descripcion }}</td>
             <td>{{ $producto->precio }}</td>

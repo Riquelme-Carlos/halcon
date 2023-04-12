@@ -63,9 +63,14 @@ class ProductoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+        $datosProducto = request()->except(['_token', '_method']);
+        Producto::where('id', '=', $id)->update($datosProducto);
+
+        $producto = Producto::findOrFail($id);
+        return view('producto.edit', compact('producto'));
+        
     }
 
     /**
