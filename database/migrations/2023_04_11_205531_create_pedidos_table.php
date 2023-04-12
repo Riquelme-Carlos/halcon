@@ -20,7 +20,7 @@ return new class extends Migration
             $table->float('precio_total');
             $table->string('estatus_pedido');           
             $table->timestamps();
-            $table->foreign('producto_id')->references('id')->on('productos');
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
         });
     }
 
