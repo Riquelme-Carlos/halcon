@@ -1,4 +1,3 @@
-Formulario de edicion de productos
 
 <form action="{{ url('/producto/'.$producto->id) }}" enctype="multipart/form-data" method="post">
 @csrf
