@@ -16,10 +16,7 @@ Mostrar la lista de productos
         <tr>
             <td>{{ $producto->id }}</td>
             <td>
-                <img src="{{ asset('storage').'/'.$producto->foto }}" alt="">
-                {{ $producto->foto }}
-
-
+                <img src="{{ asset('storage').'/'.$producto->foto }}" width="100" alt="">
             </td>
             <td>{{ $producto->nombre }}</td>
             <td>{{ $producto->descripcion }}</td>

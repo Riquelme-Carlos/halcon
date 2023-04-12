@@ -11,8 +11,8 @@
     <input id="stock" type="number" value="{{$producto->stock}}" name="stock">
     <br>
     <label for="foto">Foto:</label>
-    {{$producto->foto}}
-    <input id="foto" type="file" value="{{$producto->foto}}" name="foto">
+    <img src="{{ asset('storage').'/'.$producto->foto }}" width="100" alt="">
+    <input id="foto" type="file" value="" name="foto">
     <br>
     <br>
     <input type="submit" value="Guardar Datos">
