@@ -53,9 +53,11 @@ class ProductoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
         //
+        $producto = Producto::findOrFail($id);
+        return view('producto.edit', compact('producto'));
     }
 
     /**
@@ -69,8 +71,10 @@ class ProductoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
         //
+        Producto::destroy($id);
+        return redirect('producto');
     }
 }
