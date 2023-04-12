@@ -12,8 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
+            $table->engine="InnoDB";
+            $table->bigIncrements('id');
+            $table->bigInteger('producto_id')->unsigned();
+            $table->integer('cantidad');
+            $table->float('precio_unitario');
+            $table->float('precio_total');
+            $table->string('estatus_pedido');           
             $table->timestamps();
+            $table->foreign('producto_id')->references('id')->on('productos');
         });
     }
 
